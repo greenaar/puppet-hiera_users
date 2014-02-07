@@ -27,9 +27,6 @@ This module exposes several configurable options.  While you can pass
 these options through a manifest, this module works best when pulling
 data out of hiera.
 
-```
-From hiera:
-
 ----------------------------
 
  Please note, when using layered yaml files, you will want to make
@@ -43,6 +40,8 @@ gem install deep_merge
   - deeper
 ```
 ----------------------------
+From hiera:
+
 ```
 hiera_users::configure::_users:
   user1:
