@@ -8,7 +8,7 @@
 #    groups:
 #      - secondary_group1
 #      - secondary_group2
-#    password: SuperSecret
+#    password: SuperSecret # http://razius.com/articles/generating-password-hashes-for-puppet/
 #    ssh_authorized_keys:
 #      key-1-user:
 #        ensure: present

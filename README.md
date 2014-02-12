@@ -55,7 +55,7 @@ hiera_users::configure::_users:
       - adm
     password: 'SuperSecretpasswordhash'
     ssh_authorized_keys:
-      key-1-user:
+      key-1-user: # This is the comment field for the key
         ensure: present
         key: PUBLIC KEY HERE
         options: ssh options, if any
