@@ -42,7 +42,7 @@ gem install deep_merge
 ----------------------------
 From hiera:
 
-# define the various groups to express.  Note, these can be in different yamls
+# define the various groups to express.  Note, these can be in different yamls.
 
 hiera_users::scope:
   - default
