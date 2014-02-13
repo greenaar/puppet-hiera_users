@@ -7,18 +7,18 @@ Manage users, groups and ssh keys through hiera.
 
 in a manifest:
 ```
-  include hiera_users::configure
+  include hiera_users
 ```
 or
 ```
-  class { 'hiera_users::configure': }
+  class { 'hiera_users': }
 ```
 in a hiera yaml: ( if loading through hiera_include('classes') )
 
 ---
 ```
 classes:
-  - hiera_users::configure
+  - hiera_users
 ```
 
 ## Configuration
@@ -42,8 +42,15 @@ gem install deep_merge
 ----------------------------
 From hiera:
 
+# define the various groups to express.  Note, these can be in different yamls
+
+hiera_users::scope:
+  - default
+  - %{::fqdn}
+  - %{::nodetype}
+
 ```
-hiera_users::configure::_users:
+hiera_users::configure::default_users:
   user1:
     ensure: present
     home: /path/to/home
@@ -71,7 +78,7 @@ hiera_users::configure::_users:
     groups:
       - puppet
 
-hiera_users::configure::_groups:
+hiera_users::configure::default_groups:
   users:
     ensure: present
     gid: 100

@@ -47,11 +47,10 @@
 #    ensure: present
 #    gid: 403
 
-class hiera_users::configure (
-  $_users  = hiera_hash('hiera_users::configure::_users',undef),
-  $_groups = hiera_hash('hiera_users::configure::_groups',undef),
+define hiera_users::configure (
+  $_users  = hiera_hash("hiera_users::configure::users_${name}", undef),
+  $_groups = hiera_hash("hiera_users::configure::groups_${name}", undef),
 ) {
-
   if $_groups {
     $groups = keys($_groups)
     hiera_users::configure::groups {
