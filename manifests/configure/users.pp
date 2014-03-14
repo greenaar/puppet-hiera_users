@@ -17,6 +17,16 @@ define hiera_users::configure::users ( $data ) {
       shell      => $data[$name]['shell'],
       system     => $data[$name]['system'],
       uid        => $data[$name]['uid'],
+      alias      => $data[$name]['alias'],
+      audit      => $data[$name]['audit'],
+      before     => $data[$name]['before'],
+      loglevel   => $data[$name]['loglevel'],
+      noop       => $data[$name]['noop'],
+      notify     => $data[$name]['notify'],
+      require    => $data[$name]['require'],
+      schedule   => $data[$name]['schedule'],
+      subscribe  => $data[$name]['subscribe'],
+      tag        => $data[$name]['tag'],
     }
 
     if ($data[$name]['ssh_authorized_keys']) and ( $data[$name]['ensure'] == 'present' ) {

@@ -5,6 +5,10 @@ class hiera_users (
   $scope = [
     hiera('hiera_users::scope', [
       'default',
+      'sysadmins',
+      $::fqdn,
+      $::domain,
+      $::nodetype,
       ]
     )
   ]

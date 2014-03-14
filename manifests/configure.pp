@@ -1,4 +1,4 @@
-#hiera_users::configure::_users:
+#hiera_users::configure::users_default:
 #  user1:
 #    ensure: present
 #    home: /path/to/home
