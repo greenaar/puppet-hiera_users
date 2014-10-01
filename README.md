@@ -42,7 +42,7 @@ gem install deep_merge
 ----------------------------
 From hiera:
 
-# define the various groups to express.  Note, these can be in different yamls.
+# define the various groups to express.  Note, these can be in different yamls
 
 hiera_users::scope:
   - default
@@ -50,7 +50,7 @@ hiera_users::scope:
   - %{::nodetype}
 
 ```
-hiera_users::configure::default_users:
+hiera_users::configure::users_default:
   user1:
     ensure: present
     home: /path/to/home
@@ -78,7 +78,7 @@ hiera_users::configure::default_users:
     groups:
       - puppet
 
-hiera_users::configure::default_groups:
+hiera_users::configure::groups_default:
   users:
     ensure: present
     gid: 100
